@@ -47,7 +47,7 @@ class _AddQuizState extends State<AddQuiz> {
         "bonnereponse": bonnereponsecontroller.text,
       };
       await DatabaseMethods().addQuizCategory(addQuiz, value!).then((value) {
-        //add flash message
+        //add flash message de confirmation
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             backgroundColor: Colors.green,
@@ -71,8 +71,8 @@ class _AddQuizState extends State<AddQuiz> {
     'Sport',
     'Football',
     'Lieux',
-    'Vélo',
-    'Moto',
+    'Science',
+    'Habillement',
     'Fruit'
   ];
 

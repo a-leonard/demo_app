@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:demo_app/pages/jeux/question.dart';
 import 'package:flutter/material.dart';
 
@@ -10,27 +9,6 @@ class GameHomePage extends StatefulWidget {
 }
 
 class _GameHomePageState extends State<GameHomePage> {
-  //Mes déclarations
-  Stream? quizStream;
-  PageController controller = PageController();
-  Widget allQuiz() {
-    return StreamBuilder(
-      stream: quizStream,
-      builder: (context, AsyncSnapshot snapshop) {
-        return snapshop.hasData
-            ? PageView.builder(
-                controller: controller,
-                itemCount: snapshop.data.docs.length,
-                itemBuilder: (context, index) {
-                  DocumentSnapshot ds = snapshop.data.docs[index];
-                  return;
-                },
-              )
-            : Container();
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
